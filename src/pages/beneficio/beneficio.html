@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Entregar</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="cancel()">
+        <span color="primary" showWhen="ios">
+         Atras
+        </span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!-- <ion-buttons end>
+      <button ion-button (click)="done()" [disabled]="!isReadyToSave" strong>
+        <span color="primary" showWhen="ios">
+        guardar
+        </span>
+        <ion-icon name="md-checkmark" showWhen="core,android,windows"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content> 
+<h2 text-align="center">ENTREGAR</h2>
+  <div *ngFor="let items of item">
+ 
+
+<ion-item>
+  <ion-label>{{ items.APOYONOMBRE }}</ion-label>
+  <ion-checkbox  > </ion-checkbox>    
+</ion-item>
+  </div>
+  <button ion-button block style=" background: #199997 ; color: #fff" (click)="Programa(itemProgrma)">
+    ENTREGAR
+  </button>
+</ion-content>

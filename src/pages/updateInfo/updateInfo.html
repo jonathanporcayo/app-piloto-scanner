@@ -1,0 +1,190 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Info</ion-title>
+    <!-- <ion-buttons start>
+      <button ion-button (click)="cancel()">
+        <span color="primary" showWhen="ios">
+         Atras
+        </span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons> -->
+    <!-- <ion-buttons end>
+      <button ion-button (click)="done()" [disabled]="!isReadyToSave" strong>
+        <span color="primary" showWhen="ios">
+        guardar
+        </span>
+        <ion-icon name="md-checkmark" showWhen="core,android,windows"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+  <ion-card>
+    <h2 style=" text-align:center"> {{ items.PRIMER_APELLIDO }} {{ items.SEGUNDO_APELLIDO }} {{ items.NOMBRE }}</h2>
+    <ion-avatar item-start style="  margin: auto;  width: 50%;   padding: 10px;   width: 150px;  height: 150px;">
+      <img src="assets/img/1485477097-avatar_78580.png">
+    </ion-avatar>
+
+    <ion-card-content>
+      <!-- <p  style=" text-align:center" > {{ items.PRIMER_APELLIDO }} {{ items.SEGUNDO_APELLIDO }} {{ items.NOMBRE }} </p> -->
+
+      <ion-item>
+        <ion-label floating *ngIf="account.CALLE">
+          <ion-icon name="home" item-start style="color: #199997"></ion-icon>
+          <b>CALLE:</b> 
+        </ion-label >
+        <ion-label floating *ngIf="!account.CALLE">
+          <ion-icon name="home" item-start style="color: #950000"></ion-icon>
+          <b>CALLE ES REQUERIDO:</b> 
+        </ion-label >
+        <ion-input type="text" [(ngModel)]="account.CALLE" name="CALLE"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating *ngIf="account.ENTRE_CALLE">
+          <ion-icon name="home" item-start style="color: #199997"></ion-icon>
+          <b> ENTRE CALLE:</b>
+        </ion-label>
+        <ion-label floating *ngIf="!account.ENTRE_CALLE">
+            <ion-icon name="home" item-start style="color: #950000"></ion-icon>
+            <b>ENTRE CALLE ES REQUERIDO:</b> 
+          </ion-label >
+        <ion-input type="text" [(ngModel)]="account.ENTRE_CALLE" name="ENTRE_CALLE"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating *ngIf="account.Y_CALLE">
+          <ion-icon name="home" item-start style="color: #199997"></ion-icon>
+          <b>Y CALLE:</b>
+        </ion-label>
+        <ion-label floating *ngIf="!account.Y_CALLE">
+            <ion-icon name="home" item-start style="color: #950000"></ion-icon>
+            <b> Y CALLE ES REQUERIDO:</b> 
+          </ion-label >
+        <ion-input type="text" [(ngModel)]="account.Y_CALLE" name="Y_CALLE"></ion-input>
+      </ion-item>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <ion-item>
+              <ion-label floating *ngIf="account.NUM_EXT">
+                <ion-icon name="home" item-start style="color: #199997"></ion-icon>
+                <b>N° EXTERIOR:</b>
+              </ion-label>
+              <ion-label floating *ngIf="!account.NUM_EXT">
+                  <ion-icon name="home" item-start style="color: #950000"></ion-icon>
+                  <b> N° EXTERIOR ES REQUERIDO:</b> 
+                </ion-label >
+              <ion-input type="text" [(ngModel)]="account.NUM_EXT" name="NUM_EXT"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <ion-item>
+              <ion-label floating *ngIf="account.NUM_INT">
+                <ion-icon name="home" item-start style="color: #199997"></ion-icon>
+                <b>N° INTERIOR:</b>
+              </ion-label>
+              <ion-label floating *ngIf="!account.NUM_INT">
+                  <ion-icon name="home" item-start style="color: #950000"></ion-icon>
+                  <b>  N° INTERIOR ES REQUERIDO:</b> 
+                </ion-label >
+              <ion-input type="text" [(ngModel)]="account.NUM_INT" name="NUM_INT"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-item>
+          <ion-label floating *ngIf="account.COLONIA">
+            <ion-icon name="home" item-start style="color: #199997"></ion-icon>
+            <b>COLONIA:</b>
+          </ion-label>
+          <ion-label floating *ngIf="!account.COLONIA">
+              <ion-icon name="home" item-start style="color: #950000"></ion-icon>
+              <b> COLONIA ES REQUERIDO:</b> 
+            </ion-label >
+          <ion-input type="text" [(ngModel)]="account.COLONIA" name="COLONIA"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating *ngIf="account.LOCALIDAD">
+            <ion-icon name="home" item-start style="color: #199997"></ion-icon>
+            <b> LOCALIDAD:</b>
+          </ion-label>
+          <ion-label floating *ngIf="!account.LOCALIDAD">
+              <ion-icon name="home" item-start style="color: #950000"></ion-icon>
+              <b>  LOCALIDAD ES REQUERIDO:</b> 
+            </ion-label >
+          <ion-input type="text" [(ngModel)]="account.LOCALIDAD" name="LOCALIDAD"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating *ngIf="account.CODIGO_POSTAL">
+            <ion-icon name="home" item-start style="color: #199997"></ion-icon>
+            <b>CODIGO POSTAL:</b>
+          </ion-label>
+          <ion-label floating *ngIf="!account.CODIGO_POSTAL">
+              <ion-icon name="home" item-start style="color: #950000"></ion-icon>
+              <b> CODIGO POSTAL ES REQUERIDO:</b> 
+            </ion-label >
+          <ion-input type="text" [(ngModel)]="account.CODIGO_POSTAL" name="CODIGO_POSTAL"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating *ngIf="account.CELULAR">
+            <ion-icon name="phone-portrait" item-start style="color: #199997"></ion-icon>
+            <b>CELULAR:</b>
+          </ion-label>
+          <ion-label floating *ngIf="!account.CELULAR">
+              <ion-icon name="home" item-start style="color: #689500"></ion-icon>
+              <b> CELULAR ES OPCIONAL:</b> 
+            </ion-label >
+          <ion-input type="text" [(ngModel)]="account.CELULAR" name="CELULAR"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating *ngIf="account.TELEFONO">
+            <ion-icon name="call" item-start style="color: #199997"></ion-icon>
+            <b>TELEFONO:</b>
+          </ion-label>
+          <ion-label floating *ngIf="!account.TELEFONO">
+              <ion-icon name="home" item-start style="color: #689500"></ion-icon>
+              <b> TELEFONO ES OPCIONAL:</b> 
+            </ion-label >
+          <ion-input type="text" [(ngModel)]="account.TELEFONO" name="TELEFONO"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating  *ngIf="account.E_MAIL">
+              <ion-icon name="mail" item-start style="color: #199997"></ion-icon>
+              <b>CORREO:</b>
+            </ion-label>
+            <ion-label floating  *ngIf="!account.E_MAIL">
+                <ion-icon name="mail" item-start style="color: #7c0400"></ion-icon>
+                <b>CORREO ES REQUERIDO:</b>
+              </ion-label>
+            <ion-input type="email" [(ngModel)]="account.E_MAIL" name="E_MAIL"></ion-input>
+          </ion-item>
+
+
+      </ion-grid>
+
+
+      <ion-card align="center" (click)="UpdateData()" style=" background: #199997 ">
+
+        <div class="card-title" style=" color: #fff" align="center">enviar</div>
+
+      </ion-card>
+
+       
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
